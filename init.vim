@@ -45,9 +45,8 @@ autocmd BufNewFile *.mk 0r ~/.vim/templates/temp.mk
 set showmode
 set backspace=indent,eol,start
 
-" Start NERDTree. If a file is specified, move the cursor to its window.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
 
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
